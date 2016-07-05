@@ -13,24 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JimsExpenseItWeek4Day2
+namespace Week4Day2ContactList
 {
     /// <summary>
-    /// Interaction logic for ExpenseItHome.xaml
+    /// Interaction logic for ContactListPage.xaml
     /// </summary>
-    public partial class ExpenseItHome : Page
+    public partial class ContactListPage : Page
     {
-        public ExpenseItHome()
+        public ContactListPage()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        // Custom constructor to pass contact list data
+        public ContactListPage(object data) : this()
         {
-            // View Expense Report
-            ExpenseReportPage expenseReportPage = new ExpenseReportPage(this.peopleListBox.SelectedItem);
-            this.NavigationService.Navigate(expenseReportPage);
-
+            // Bind to contact list data.
+            this.DataContext = data;
         }
     }
 }

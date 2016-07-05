@@ -1,12 +1,12 @@
-﻿<Page x:Class="JimsExpenseItWeek4Day2.ExpenseItHome"
+﻿<Page x:Class="Week4Day2ContactList.ContactListHome"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:JimsExpenseItWeek4Day2"
+      xmlns:local="clr-namespace:Week4Day2ContactList"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="ExpenseIt - Home">
+      Title="ContactList - Home">
 
     <Grid Margin="10,0,10,10">
 
@@ -14,28 +14,26 @@
 
 
             <!-- Expense Report Data -->
-            <XmlDataProvider x:Key="ExpenseDataSource" XPath="Expenses">
+            <XmlDataProvider x:Key="ContactDataSource" XPath="Contacts">
                 <x:XData>
-                    <Expenses xmlns="">
+                    <Contacts xmlns="">
                         <Person Name="Mike" Department="Legal">
-                            <Expense ExpenseType="Lunch" ExpenseAmount="50" />
-                            <Expense ExpenseType="Transportation" ExpenseAmount="50" />
+                            <Contact ContactType="Home" ContactNumber="555-1212" />
+                            <Contact ContactType="Cell" ContactNumber="555-2525" />
                         </Person>
                         <Person Name="Lisa" Department="Marketing">
-                            <Expense ExpenseType="Document printing"
-                                ExpenseAmount="50"/>
-                            <Expense ExpenseType="Gift" ExpenseAmount="125" />
+                            <Contact ContactType="Fax"  ContactNumber="555-6363"/>
+                            <Contact ContactType="Walkie Talkie" ContactNumber="Channel 18" />
                         </Person>
                         <Person Name="John" Department="Engineering">
-                            <Expense ExpenseType="Magazine subscription" 
-                                ExpenseAmount="50"/>
-                            <Expense ExpenseType="New machine" ExpenseAmount="600" />
-                            <Expense ExpenseType="Software" ExpenseAmount="500" />
+                            <Contact ExpenseType="Home" ContactNumber="555-1212"/>
+                            <Contact ContactType="Cell" ContactNumber="555-1212" />
+                            <Contact ContactType="Fax" ContactNumber="555-1212" />
                         </Person>
                         <Person Name="Mary" Department="Finance">
-                            <Expense ExpenseType="Dinner" ExpenseAmount="100" />
+                            <Contact ContactType="Office" ContactNumber="555-3434" />
                         </Person>
-                    </Expenses>
+                    </Contacts>
                 </x:XData>
             </XmlDataProvider>
 
@@ -66,14 +64,14 @@
         <!-- People list -->
 
         <Label Grid.Column="1" Style="{StaticResource headerTextStyle}" >
-            View Expense Report
+            View Contact List
         </Label>
 
         <Border Grid.Column="1" Grid.Row="1" Style="{StaticResource listHeaderStyle}">
             <Label Style="{StaticResource listHeaderTextStyle}">Names</Label>
         </Border>
         <ListBox Name="peopleListBox" Grid.Column="1" Grid.Row="2" 
-         ItemsSource="{Binding Source={StaticResource ExpenseDataSource}, XPath=Person}"
+         ItemsSource="{Binding Source={StaticResource ContactDataSource}, XPath=Person}"
          ItemTemplate="{StaticResource nameItemTemplate}">
         </ListBox>
 

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JimsExpenseItWeek4Day2
+namespace Week4Day2ContactList
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

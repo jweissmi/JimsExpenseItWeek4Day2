@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace JimsExpenseItWeek4Day2
+namespace Week4Day2ContactList
 {
     /// <summary>
     /// Interaction logic for App.xaml
